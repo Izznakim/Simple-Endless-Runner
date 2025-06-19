@@ -4,7 +4,6 @@ public class ObstacleSpawner : MonoBehaviour
 {
    public GameObject obstacle;
    private PlayerController playerController;
-   private Vector2 spawnPosition = new Vector2(11, -3.2f);
 
    private readonly float startDelay = 2;
    private readonly float repeatRate = 2;
@@ -18,9 +17,10 @@ public class ObstacleSpawner : MonoBehaviour
 
    private void SpawnObstacle()
    {
-      if (playerController.gameOver == false)
+      /*if (playerController.gameOver == false)
       {
-         Instantiate(obstacle, spawnPosition, obstacle.transform.rotation);
-      }
+         Instantiate(obstacle, new Vector2(transform.position.x + 11, -3f), obstacle.transform.rotation);
+      }*/
+      Instantiate(obstacle, new Vector2(transform.position.x + 11, -3f), obstacle.transform.rotation);
    }
 }

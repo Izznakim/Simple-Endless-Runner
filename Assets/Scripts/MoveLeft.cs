@@ -4,8 +4,8 @@ public class MoveLeft : MonoBehaviour
 {
    private PlayerController playerController;
 
-   [SerializeField] private float speed = 5;
-   private float leftBound = -11;
+   [SerializeField] private float speed = 0.1f;
+   private float botBound = -7;
 
    private void Start()
    {
@@ -20,7 +20,7 @@ public class MoveLeft : MonoBehaviour
          transform.Translate(Vector2.left * Time.deltaTime * speed);
       }
 
-      if (transform.position.x < leftBound)
+      if (transform.position.y < botBound)
       {
          Destroy(gameObject);
       }
