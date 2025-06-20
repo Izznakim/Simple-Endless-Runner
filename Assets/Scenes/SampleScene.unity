@@ -972,7 +972,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1011567250}
-  - component: {fileID: 1011567251}
   - component: {fileID: 1011567252}
   m_Layer: 0
   m_Name: Parallax Controller
@@ -996,24 +995,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1011567251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011567249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3af1875180c6f41bc453350c09daeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Layer_Sprites:
-  - {fileID: 21300000, guid: a2d04d67b859524439e945022e0597ea, type: 3}
-  - {fileID: 21300000, guid: 630227a2121b4a243888619c45836138, type: 3}
-  - {fileID: 21300000, guid: 31eddef01407d664bb7dc07175c9797f, type: 3}
-  - {fileID: 21300000, guid: 5363ba5ff6a4d25418d986e793446fdb, type: 3}
-  - {fileID: 21300000, guid: f0328e3028fda6341a7f32ca37ccd221, type: 3}
 --- !u!114 &1011567252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1839,14 +1820,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3256411474690076421, guid: 9e162206ce72609458d9bbfc8a6ca241, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 38b2dcf98a15c514e92164e7764baffb, type: 2}
-    - target: {fileID: 3256411474690076421, guid: 9e162206ce72609458d9bbfc8a6ca241, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3381620254343778338, guid: 9e162206ce72609458d9bbfc8a6ca241, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.25
@@ -1886,34 +1859,6 @@ PrefabInstance:
     - target: {fileID: 3381620254343778338, guid: 9e162206ce72609458d9bbfc8a6ca241, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5873585902292859257, guid: 9e162206ce72609458d9bbfc8a6ca241, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1792034589, guid: 89b2ba2fd1863a144b5b0e2c85575119, type: 3}
-    - target: {fileID: 7645312810976806439, guid: 9e162206ce72609458d9bbfc8a6ca241, type: 3}
-      propertyPath: m_Size.x
-      value: 1.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 7645312810976806439, guid: 9e162206ce72609458d9bbfc8a6ca241, type: 3}
-      propertyPath: m_Size.y
-      value: 2.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 7645312810976806439, guid: 9e162206ce72609458d9bbfc8a6ca241, type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7645312810976806439, guid: 9e162206ce72609458d9bbfc8a6ca241, type: 3}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7645312810976806439, guid: 9e162206ce72609458d9bbfc8a6ca241, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 7645312810976806439, guid: 9e162206ce72609458d9bbfc8a6ca241, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.53
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

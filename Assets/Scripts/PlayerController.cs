@@ -22,10 +22,10 @@ public class PlayerController : MonoBehaviour
    {
       if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
       {
-         playerAnimator.SetTrigger("Jump_trig");
-         playerAnimator.SetBool("Jump_b", true);
          playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
          isOnGround = false;
+         playerAnimator.SetTrigger("Jump_trig");
+         playerAnimator.SetBool("Jump_b", true);
       }
    }
 
@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
       {
          gameOver = true;
          Debug.Log("Game Over");
+         playerAnimator.SetBool("Death_b", true);
+         playerAnimator.SetFloat("Speed_f", 0);
       }
    }
 }

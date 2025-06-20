@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5748649052029902275}
   - component: {fileID: 3252655853096724078}
   - component: {fileID: -3007183504837944911}
-  - component: {fileID: 4585959444001591020}
+  - component: {fileID: 3469046873649745456}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Obstacle
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 2093707166957284652}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.9, y: -3, z: 0}
-  m_LocalScale: {x: 0.46785, y: 0.3993931, z: 0.5}
+  m_LocalPosition: {x: 10.6105, y: -3.0273, z: 0}
+  m_LocalScale: {x: 0.28210622, y: 0.29125047, z: 0.8315}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,12 +79,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.4009434, g: 0.80091053, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 95b34bf8a34aa3543949566316d48302, type: 3}
+  m_Color: {r: 0.4999555, g: 0.9790719, b: 0.990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 3.84, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
---- !u!60 &4585959444001591020
+--- !u!60 &3469046873649745456
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,21 +164,23 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.5, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 2, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 3.84, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.0067666, y: 0.5632051}
-      - {x: -1.497139, y: -0.27427357}
-      - {x: -2.0030656, y: 0.5666833}
-      - {x: -2.51606, y: -0.27933714}
-      - {x: -0.49996078, y: -0.28784823}
+    - - {x: 1.276403, y: 0.65}
+      - {x: 0.64292145, y: -0.25}
+      - {x: 0.000442137, y: 0.65}
+      - {x: -0.63864535, y: -0.25}
+      - {x: -1.2830527, y: 0.65}
+      - {x: -1.9365013, y: -0.26}
+      - {x: 1.9234649, y: -0.26}
   m_UseDelaunayMesh: 0

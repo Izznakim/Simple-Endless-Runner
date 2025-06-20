@@ -17,10 +17,9 @@ public class ObstacleSpawner : MonoBehaviour
 
    private void SpawnObstacle()
    {
-      /*if (playerController.gameOver == false)
+      if (playerController.gameOver == false)
       {
-         Instantiate(obstacle, new Vector2(transform.position.x + 11, -3f), obstacle.transform.rotation);
-      }*/
-      Instantiate(obstacle, new Vector2(transform.position.x + 11, -2.9f), obstacle.transform.rotation);
+         Instantiate(obstacle, new Vector2(transform.position.x + 11, -3.09f), obstacle.transform.rotation);
+      }
    }
 }
