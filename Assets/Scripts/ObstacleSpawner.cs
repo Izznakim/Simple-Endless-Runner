@@ -21,6 +21,6 @@ public class ObstacleSpawner : MonoBehaviour
       {
          Instantiate(obstacle, new Vector2(transform.position.x + 11, -3f), obstacle.transform.rotation);
       }*/
-      Instantiate(obstacle, new Vector2(transform.position.x + 11, -3f), obstacle.transform.rotation);
+      Instantiate(obstacle, new Vector2(transform.position.x + 11, -2.9f), obstacle.transform.rotation);
    }
 }
