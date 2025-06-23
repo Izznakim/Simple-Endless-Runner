@@ -133,7 +133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOnGround: 1
   jumpForce: 7
-  gameOver: 0
 --- !u!95 &3256411474690076421
 Animator:
   serializedVersion: 7

@@ -8,7 +8,6 @@ public class ParallaxBackground : MonoBehaviour
    public float[] Layer_Speed = new float[5];
    public GameObject[] Layer_Objects = new GameObject[5];
 
-   private PlayerController playerController;
    private Transform _camera;
 
    private float[] startPos = new float[5];
@@ -17,7 +16,6 @@ public class ParallaxBackground : MonoBehaviour
 
    void Start()
    {
-      playerController = GameObject.Find("Player").GetComponent<PlayerController>();
       _camera = Camera.main.transform;
       sizeX = Layer_Objects[0].transform.localScale.x;
       boundSizeX = Layer_Objects[0].GetComponent<SpriteRenderer>().sprite.bounds.size.x;
@@ -30,7 +28,7 @@ public class ParallaxBackground : MonoBehaviour
    void Update()
    {
       //Moving camera
-      if(playerController.gameOver)
+      if(GameManager.instance.isGameOver)
       {
          Camera_Move = false;
       }
