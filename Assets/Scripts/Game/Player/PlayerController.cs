@@ -7,18 +7,26 @@ public class PlayerController : MonoBehaviour
 
    [SerializeField] private bool isOnGround;
    [SerializeField] private float jumpForce = 10f;
+   private bool isGameOver = false;
 
    // Start is called once before the first execution of Update after the MonoBehaviour is created
    void Start()
    {
+      GameEvents.OnGameOver += HandleGameOver;
+
       playerRb = GetComponent<Rigidbody2D>();
       playerAnimator = GetComponent<Animator>();
+   }
+
+   private void OnDestroy()
+   {
+      GameEvents.OnGameOver -= HandleGameOver;
    }
 
    // Update is called once per frame
    void Update()
    {
-      if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !GameManager.instance.isGameOver)
+      if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !isGameOver)
       {
          playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
          isOnGround = false;
@@ -27,7 +35,7 @@ public class PlayerController : MonoBehaviour
       }
       if (Input.GetKeyDown(KeyCode.R))
       {
-         GameManager.instance.Restart();
+         GameEvents.TriggerGameRestart();
       }
    }
 
@@ -40,9 +48,14 @@ public class PlayerController : MonoBehaviour
       }
       else if (collision.gameObject.CompareTag("Obstacle"))
       {
-         GameManager.instance.GameOver();
+         GameEvents.TriggerGameOver();
          playerAnimator.SetBool("Death_b", true);
          playerAnimator.SetFloat("Speed_f", 0);
       }
+   }
+
+   void HandleGameOver()
+   {
+      isGameOver = true;
    }
 }

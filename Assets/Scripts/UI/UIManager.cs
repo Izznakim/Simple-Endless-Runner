@@ -7,6 +7,18 @@ public class UIManager : MonoBehaviour
    public TextMeshProUGUI scoreText;
    public GameObject retryText;
 
+   private void OnEnable()
+   {
+      GameEvents.OnGameOver += ShowGameOver;
+      GameEvents.OnUpdateScore += UpdateScore;
+   }
+
+   private void OnDisable()
+   {
+      GameEvents.OnGameOver -= ShowGameOver;
+      GameEvents.OnUpdateScore -= UpdateScore;
+   }
+
    private void Awake()
    {
       Instance = this;

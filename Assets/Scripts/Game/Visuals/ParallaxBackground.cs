@@ -13,9 +13,12 @@ public class ParallaxBackground : MonoBehaviour
    private float[] startPos = new float[5];
    private float boundSizeX;
    private float sizeX;
+   private bool isGameOver = false;
 
    void Start()
    {
+      GameEvents.OnGameOver += HandleGameOver;
+
       _camera = Camera.main.transform;
       sizeX = Layer_Objects[0].transform.localScale.x;
       boundSizeX = Layer_Objects[0].GetComponent<SpriteRenderer>().sprite.bounds.size.x;
@@ -25,14 +28,15 @@ public class ParallaxBackground : MonoBehaviour
       }
    }
 
+   private void OnDestroy()
+   {
+      GameEvents.OnGameOver -= HandleGameOver;
+   }
+
    void Update()
    {
       //Moving camera
-      if(GameManager.instance.isGameOver)
-      {
-         Camera_Move = false;
-      }
-      if (Camera_Move)
+      if (Camera_Move && !isGameOver)
       {
          _camera.position += Vector3.right * Time.deltaTime * Camera_MoveSpeed;
       }
@@ -51,5 +55,11 @@ public class ParallaxBackground : MonoBehaviour
          }
 
       }
+   }
+
+   void HandleGameOver()
+   {
+      isGameOver = true;
+      Camera_Move = false;
    }
 }
