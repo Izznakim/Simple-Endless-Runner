@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-   public static UIManager Instance;
    public TextMeshProUGUI scoreText;
    public GameObject retryText;
 
@@ -17,11 +16,6 @@ public class UIManager : MonoBehaviour
    {
       GameEvents.OnGameOver -= ShowGameOver;
       GameEvents.OnUpdateScore -= UpdateScore;
-   }
-
-   private void Awake()
-   {
-      Instance = this;
    }
 
    public void UpdateScore(int score)
