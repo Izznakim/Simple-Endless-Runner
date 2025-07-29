@@ -1510,8 +1510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54e11c2692b04794194a2e43bdbf2027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGameOver: 0
-  score: 0
+  uiManagerSource: {fileID: 482461615}
 --- !u!1 &1779776402
 GameObject:
   m_ObjectHideFlags: 0

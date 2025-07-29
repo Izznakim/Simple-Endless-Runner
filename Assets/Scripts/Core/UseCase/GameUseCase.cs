@@ -1,4 +1,4 @@
-public class GameUseCase
+public class GameUseCase : IGameUseCase
 {
    private GameSession _session;
 

@@ -16,10 +16,6 @@ public class GameUseCaseTests
    [Test]
    public void GetScoreShouldReturnScoreFromSession()
    {
-      // Use the Assert class to test conditions
-      /*var session = new GameSession();
-      var useCase = new GameUseCase(session);*/
-
       session.AddScore(2f);
       Assert.AreEqual(2f, useCase.GetScore());
    }
@@ -27,18 +23,12 @@ public class GameUseCaseTests
    [Test]
    public void IsGameOverShouldNotReturnFalseInitially()
    {
-      /*var session = new GameSession();
-      var useCase = new GameUseCase(session);*/
-
       Assert.IsFalse(useCase.IsGameOver());
    }
 
    [Test]
    public void AddScoreShouldWorkWhenGameNotOver()
    {
-      /*var session = new GameSession();
-      var useCase = new GameUseCase(session);*/
-
       useCase.AddScore(1f);
       Assert.AreEqual(1f, useCase.GetScore());
    }
@@ -46,9 +36,6 @@ public class GameUseCaseTests
    [Test]
    public void AddScoreShouldNotWorkWhenGameIsOver()
    {
-      /*var session = new GameSession();
-      var useCase = new GameUseCase(session);*/
-
       useCase.GameOver();
       useCase.AddScore(1f);
       Assert.AreEqual(0f, useCase.GetScore());
@@ -57,9 +44,6 @@ public class GameUseCaseTests
    [Test]
    public void GameOverShouldSetIsGameOverTrue()
    {
-      /*var session = new GameSession();
-      var useCase = new GameUseCase(session);*/
-
       useCase.GameOver();
       Assert.IsTrue(useCase.IsGameOver());
    }
@@ -67,14 +51,21 @@ public class GameUseCaseTests
    [Test]
    public void ResetShouldResetScoreAndGameOver()
    {
-      /*var session = new GameSession();
-      var useCase = new GameUseCase(session);*/
-
       useCase.AddScore(5f);
       useCase.GameOver();
       useCase.Reset();
 
       Assert.AreEqual(0f,useCase.GetScore());
+      Assert.IsFalse(useCase.IsGameOver());
+   }
+
+   [Test]
+   public void AddScoreThenResetShouldResetCorrectly()
+   {
+      useCase.AddScore(10f);
+      useCase.Reset();
+
+      Assert.AreEqual(0f, useCase.GetScore());
       Assert.IsFalse(useCase.IsGameOver());
    }
 }

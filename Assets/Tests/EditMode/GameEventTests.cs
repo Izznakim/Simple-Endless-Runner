@@ -4,14 +4,12 @@ public class GameEventTests
 {
    private bool gameOverCalled;
    private bool gameRestartCalled;
-   private int lastScore;
 
    [SetUp]
    public void SetUp()
    {
       gameOverCalled = false;
       gameRestartCalled = false;
-      lastScore = -1;
    }
 
    [Test]
@@ -33,15 +31,20 @@ public class GameEventTests
    }
 
    [Test]
-   public void TriggerUpdateScoreShouldInvokeOnUpdateScoreWithCorrectValue()
+   public void MultipleSubscriptionShouldOnlyTriggerOnceEach()
    {
-      GameEvents.OnUpdateScore += HandleUpdateScore;
-      GameEvents.TriggerUpdateScore(100);
-      GameEvents.OnUpdateScore -= HandleUpdateScore;
-      Assert.AreEqual(100, lastScore);
+      int counter = 0;
+      void Handler() => counter++;
+
+      GameEvents.OnGameOver += Handler;
+      GameEvents.OnGameOver += Handler;
+      GameEvents.TriggerGameOver();
+      GameEvents.OnGameOver -= Handler;
+      GameEvents.OnGameOver -= Handler;
+
+      Assert.AreEqual(2, counter);
    }
 
    void HandleGameOver() => gameOverCalled = true;
    void HandleGameRestart() => gameRestartCalled = true;
-   void HandleUpdateScore(int score) => lastScore = score;
 }

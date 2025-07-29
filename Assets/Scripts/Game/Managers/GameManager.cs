@@ -4,11 +4,21 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-   private GameUseCase _gameUseCase;
+   [SerializeField] private MonoBehaviour uiManagerSource;
+   private IGameUseCase _gameUseCase;
+   private IUIManager _uiManager;
+   private ISceneLoader _sceneLoader;
 
    private void Awake()
    {
       _gameUseCase = new GameUseCase(new GameSession());
+      _uiManager = uiManagerSource as IUIManager;
+      _sceneLoader = new SceneLoader();
+   }
+
+   public void SetUIManager(UIManager uiManager)
+   {
+      _uiManager = uiManager;
    }
 
    // Update is called once per frame
@@ -17,7 +27,7 @@ public class GameManager : MonoBehaviour
       if (!_gameUseCase.IsGameOver())
       {
          _gameUseCase.AddScore(Time.deltaTime);
-         GameEvents.TriggerUpdateScore((int)_gameUseCase.GetScore());
+         _uiManager.UpdateScore((int)_gameUseCase.GetScore());
       }
    }
 
@@ -36,12 +46,12 @@ public class GameManager : MonoBehaviour
    public void GameOver()
    {
       _gameUseCase.GameOver();
+      _uiManager.ShowGameOver();
    }
 
    public void Restart()
    {
-      Time.timeScale = 1f;
-      SceneManager.LoadScene(0);
+      _sceneLoader.Restart();
    }
 
    public bool IsGameOver() => _gameUseCase.IsGameOver();
